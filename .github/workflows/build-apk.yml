@@ -31,7 +31,7 @@ jobs:
       - name: Build with Gradle
         run: |
           chmod +x gradlew
-          sed -i 's/$//' gradlew gradlew.bat
+          sed -i 's/\r$//' gradlew gradlew.bat
           ./gradlew assembleDebug
 
       - name: Upload APK
