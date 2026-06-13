@@ -22,15 +22,15 @@ jobs:
         env:
           SKIP_JDK_VERSION_CHECK: 1
 
+      - name: Install NDK r23c (compatible with AGP 3.6)
+        run: |
+          ${ANDROID_SDK_ROOT}/cmdline-tools/16.0/bin/sdkmanager "ndk;23.1.7779620"
+
       - name: Set up JDK 11 (for Gradle build)
         uses: actions/setup-java@v4
         with:
           java-version: '11'
           distribution: 'temurin'
-
-      - name: Install NDK r23c (compatible with AGP 3.6)
-        run: |
-          ${ANDROID_SDK_ROOT}/cmdline-tools/16.0/bin/sdkmanager "ndk;23.1.7779620"
 
       - name: Build with Gradle
         run: |
